@@ -1,0 +1,12 @@
+Cambridge Coding ++ Assessment: Trivial Pursuit
+Write Up
+
+Issues:
+My chatbot does not work for questions if there is more than one Wikipedia page with the same name. For example, if the question refers to the company Apple, the corresponding Wikipedia that will be searched will be about the apple as a fruit, and so it can’t find an answer. This also happens for pages such as ‘Mamma Mia’ as it can refer to a number of different things, each with their own page.
+It also misbehaves often for questions with a lot of words in them as it both has difficulty separating the page name as more than one proper noun may be in the question and it works partly by searching for sentences with the same words mentioned in the question, so too many words in the question confuses the algorithm and makes it much less accurate. The simpler the question, the more accurate the bot is. For example, ‘Who is Ed Sheeran?’ works, whilst ‘In which year did Ed Sheeran publish his first album, titled The Orange Room?’ does not.
+Additionally, I have parsed the question by separating out proper nouns and using these as page names. If there is no proper noun in the question, the bot will not work.
+Improvements:
+To improve my chatbot, I could modify it so that, if it cannot find an answer in Wikipedia, it could search other websites to find the answer. This would require me to specify another website and possibly change the format but it would mean that my bot could answer a wider range of questions. I could also adapt this feature so that the bot could scan multiple websites even if it has found an answer in Wikipedia and then compare the different answers to try and improve the accuracy of my bot. 
+My chatbot works by finding relevant sentences by searching for keywords from the question, and then scanning those again for keywords derived from the question word, for example, a person for ‘who’ questions or a date for ‘when.’ Currently, however, it scans the sentences in the order it found them and as soon as it finds this relevant information, it will take that as the answer and ignore any further relevant sentences. To improve the accuracy of my chatbot, I could implement a feature that scores each of the sentences for how many keywords from the question it contains and then search them in this order, which should improve the accuracy as the most relevant sentence would be outputted rather than the first sentence.
+
+Sophie Novelli
